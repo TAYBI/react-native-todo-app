@@ -4,7 +4,8 @@ import {
   View,
   FlatList,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
+  Alert
 } from "react-native";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
 
@@ -23,11 +24,16 @@ function TodoList({ handleDelete, todos }) {
                 alignItems: "center"
               }}
             >
-              <AntDesign name="checkcircleo" size={24} color="#ffc2c2" />
+              <AntDesign name="checkcircleo" size={24} color="#ff6255" />
               <Text style={styles.text}>{item.content}</Text>
             </TouchableOpacity>
             <View>
-              <Ionicons name="ios-timer" size={30} color="#ffc255" />
+              <Ionicons
+                name="ios-timer"
+                size={30}
+                color="#ffc23c"
+                onPress={() => Alert.alert("timerr")}
+              />
             </View>
           </TouchableOpacity>
         )}

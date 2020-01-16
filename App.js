@@ -5,6 +5,7 @@ import {
   View,
   TouchableWithoutFeedback,
   Keyboard,
+  AsyncStorage,
   Alert
 } from "react-native";
 import TodoList from "./components/todoList";
@@ -12,11 +13,7 @@ import AddTodo from "./components/addTodo";
 import uuidv1 from "uuid/v1";
 
 export default function App() {
-  const [todos, setTodos] = useState([
-    { key: uuidv1(), content: "do somthing" },
-    { key: uuidv1(), content: "do somthing" },
-    { key: uuidv1(), content: "do somthing" }
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const handleDelete = key => {
     setTodos([...todos.filter(todo => todo.key !== key)]);
@@ -24,7 +21,7 @@ export default function App() {
 
   const handelSubmit = text => {
     if (text.length <= 2) {
-      Alert.alert("oops", "Todo must be over 3 characters long");
+      Alert.alert("oops 🧐️", "Todo must be over 3 characters long");
     } else {
       const todo = {
         key: uuidv1(),
@@ -37,7 +34,7 @@ export default function App() {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
-        <Text style={styles.header}>Todo List</Text>
+        <Text style={styles.header}>Todo List for today</Text>
         <AddTodo handelSubmit={handelSubmit} />
         <TodoList todos={todos} handleDelete={handleDelete} />
       </View>
