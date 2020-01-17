@@ -13,7 +13,10 @@ import AddTodo from "./components/addTodo";
 import uuidv1 from "uuid/v1";
 
 export default function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    { key: uuidv1(), content: "do something" },
+    { key: uuidv1(), content: "do something else" }
+  ]);
 
   const handleDelete = key => {
     setTodos([...todos.filter(todo => todo.key !== key)]);
@@ -34,7 +37,7 @@ export default function App() {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
-        <Text style={styles.header}>Todo List for today</Text>
+        <Text style={styles.header}>Todo Today</Text>
         <AddTodo handelSubmit={handelSubmit} />
         <TodoList todos={todos} handleDelete={handleDelete} />
       </View>

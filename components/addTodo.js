@@ -24,7 +24,7 @@ function AddTodo({ handelSubmit }) {
     <View style={styles.container}>
       <TextInput
         onChange={e => handleChange(e.nativeEvent.text)}
-        placeholder="Enter todo"
+        placeholder="Enter todo ..."
         style={styles.input}
         value={text}
       />
