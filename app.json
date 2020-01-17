@@ -7,7 +7,7 @@
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/Subtract.png",
+    "icon": "./assets/subtract.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -19,10 +19,10 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "todotoday"
+      "bundleIdentifier": "todo.today.taybi"
     },
     "android": {
-      "package": "todotoday"
+      "package": "todo.today.taybi"
     }
   }
 }
